@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>animate</title>
+
+  <link rel="stylesheet" href="../node_modules/animate.css/animate.min.css">
+</head>
+
+<body>
+  <!-- 
+    animate__animated : 动画执行的基础类, 必须要带
+    animate__bounce: 具体的动画效果
+   -->
+
+  <!-- 方案1: 直接写在元素上;  首次显示时 带有动画 -->
+  <img class="animate__animated animate__rubberBand" src="./imgs/bigskin-1.jpg" height="200" alt="">
+
+  <!-- 方案2: DOM方案. 与一些交互操作结合使用 -->
+  <h1>交互动画: 鼠标点击</h1>
+
+  <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+  <script>
+    // 动画出现的时机: 动画的class 从无到有的时候
+
+
+    // 点击 h1 时, 为其添加动画
+    $('h1').click(function () {
+      $(this).addClass('animate__animated animate__bounce')
+    })
+
+    // 实现多次点击动画: 在动画结束时删除对应的class
+    $('h1').on('animationend', function () {
+      // alert("h1 的动画已结束")
+      // 移除掉动画的class
+      $(this).removeClass('animate__bounce')
+    })
+  </script>
+</body>
+
+</html>

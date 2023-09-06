@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>audio</title>
+</head>
+
+<body>
+  <!-- 多媒体三元素: img  video audio -->
+  <!-- controls: 显示控制器 -->
+  <audio controls src="https://game.gtimg.cn/images/lol/act/img/vo/choose/1.ogg"></audio>
+
+  <button onclick="playAudio()">播放</button>
+
+  <script>
+    // DOM方案创建 audio 元素
+    // 放在外部, 则只会创建唯一的播放器
+    const au = document.createElement('audio')
+
+    function playAudio() {
+      au.src = 'https://game.gtimg.cn/images/lol/act/img/vo/choose/1.ogg'
+
+      au.play()
+    }
+  </script>
+</body>
+
+</html>

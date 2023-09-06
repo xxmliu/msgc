@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>webstorage</title>
+</head>
+
+<body>
+  <button onclick="removeEmp()">删除 Emp</button>
+
+  <button onclick="removeAll()">清空</button>
+
+  <!-- 运行当前网页 -> 后台查看 应用/Application -> 观察左侧栏中的存储部分 -->
+  <script>
+    // webStorage 细分为两类存储方案
+    // 本地存储空间: localStorage  - 把数据存储在本地硬盘中, 属于长期存储
+    // 会话存储空间: sessionStorage - 把数据存储在内存中, 属于短期存储
+
+    // setItem: 用于 添加/修改 元素
+    // 参数都是字符串类型;  参数1: 属性名;  参数2: 值
+    localStorage.setItem('emp1', '凯凯')
+
+    sessionStorage.setItem('emp2', '楠楠')
+
+    // 尝试: 刷新浏览器  和 重启浏览器 两种方式, 查看存储的内容还在不在
+
+
+    // 删除操作:
+    function removeEmp() {
+      // removeItem: 删除指定属性
+      localStorage.removeItem('emp1')
+      sessionStorage.removeItem('emp2')
+    }
+
+    // 清空 clear
+    localStorage.setItem('one', '一')
+    localStorage.setItem('two', '二')
+    localStorage.setItem('three', '三')
+
+    function removeAll() {
+      localStorage.clear()
+    }
+
+    // 对象类型的存储: 需要转为JSON格式的字符串
+    var emp = { ename: "凯凯", age: 33 }
+
+    localStorage.setItem('emp', JSON.stringify(emp))
+
+    // console.log('' + emp)
+
+    // 如果读取使用: 则需要用 JSON 转回原来的格式
+    var empp = JSON.parse(
+      localStorage.getItem('emp')
+    )
+
+    console.log('empp:', empp)
+  </script>
+</body>
+
+</html>

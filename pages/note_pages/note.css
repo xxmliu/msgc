@@ -1,0 +1,77 @@
+#body {
+  background-color: #f7f7f7;
+}
+#body > .note {
+  width: var(--width-main);
+  margin: 0 auto;
+}
+#body > .note > .note-content {
+  display: flex;
+  flex-wrap: wrap;
+}
+#body > .note > .note-content > li {
+  width: calc((100% - 30px) / 4);
+  margin: 0 10px 10px 0;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.2);
+}
+#body > .note > .note-content > li:nth-child(4n) {
+  margin-right: 0;
+}
+#body > .note > .note-content > li > img {
+  width: 100%;
+  height: 250px;
+}
+#body > .note > .note-content > li > p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  margin: 6px;
+}
+#body > .note > .note-content > li > div {
+  display: flex;
+  padding: 6px;
+  justify-content: space-between;
+}
+#body > .note > .note-content > li > div > span {
+  color: #888;
+  font-size: 14px;
+}
+#body > .note > .note-content > li > div > div {
+  display: flex;
+}
+#body > .note > .note-content > li > div > div > img {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: 4px;
+}
+#body > .note > .pages {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+#body > .note > .pages > ul {
+  display: flex;
+  margin: 0 3px;
+}
+#body > .note > .pages > ul > li {
+  cursor: default;
+  width: 40px;
+  text-align: center;
+  line-height: 40px;
+  margin: 0 3px;
+  background-color: white;
+}
+#body > .note > .pages > ul > li.active {
+  color: white;
+  background-color: orange;
+}
+#body > .note > .pages > button {
+  background-color: white;
+  width: 80px;
+  height: 40px;
+}/*# sourceMappingURL=note.css.map */

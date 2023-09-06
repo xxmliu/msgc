@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>swiper</title>
+
+  <link rel="stylesheet" href="../node_modules/swiper/swiper-bundle.min.css">
+
+  <style>
+    .swiper {
+      width: 600px;
+      height: 300px;
+      border: 2px solid red;
+    }
+
+    .swiper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .swiper-pagination-bullet {
+      width: 14px;
+      height: 14px;
+    }
+
+    .swiper-pagination-bullet-active {
+      background-color: orange;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="swiper">
+    <!-- 下方这些class的名称 都是固定的规定 -->
+    <div class="swiper-wrapper">
+      <!-- 每个 swiper-slide 都是一个轮播的项目 -->
+      <div class="swiper-slide">
+        <img src="./imgs/bigskin-1.jpg" alt="">
+      </div>
+      <div class="swiper-slide">
+        <img src="./imgs/bigskin-2.jpg" alt="">
+      </div>
+      <div class="swiper-slide">
+        <img src="./imgs/bigskin-3.jpg" alt="">
+      </div>
+      <div class="swiper-slide">
+        <img src="./imgs/bigskin-4.jpg" alt="">
+      </div>
+      <div class="swiper-slide">
+        <img src="./imgs/bigskin-5.jpg" alt="">
+      </div>
+    </div>
+    <!-- 分页器 -->
+    <div class="swiper-pagination"></div>
+    <!-- 前进后退按钮 -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+  <button class="prev">上一页</button>
+  <button class="next">下一页</button>
+
+  <script src="../node_modules/swiper/swiper-bundle.min.js"></script>
+  <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+
+  <script>
+    $('button.prev').click(function () {
+      mySwiper.slidePrev()
+    })
+
+    $('button.next').click(function () {
+      // 让 swiper 滚动到下一张
+      mySwiper.slideNext();
+    })
+
+
+    // 把 class="swiper" 的元素, 用 Swiper 构造处理
+    // Swiper构造函数接收两个参数
+    // 参数1: 要改造的元素 的 选择器
+    // 参数2: 个性化配置
+    var mySwiper = new Swiper('.swiper', {
+      // 导航按钮
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      // 分页器
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+
+
+      // 默认为"slide"（普通位移切换），还可设置为"fade"（淡入）、"cube"（方块）、"coverflow"（3d流）、"flip"（3d翻转）、"cards"(卡片式)、"creative"（创意性）。
+      effect: 'slide', //切换效果
+
+      loop: true, // 无限循环: 开启
+
+      // true: 代表采用默认的设定
+      // autoplay: true
+      // 可以通过对象类型的值 进行个性化设定
+      autoplay: {
+        delay: 3000, // 1000毫秒 = 1秒.  滚动的间隔时长
+        // 当用户操作swiper之后,是否停止自动滚动.  默认值: true 停止
+        disableOnInteraction: false, // 设置为false, 不停止
+        // 当鼠标进入时,暂停自动切换
+        pauseOnMouseEnter: true,
+      }
+    })
+  </script>
+</body>
+
+</html>

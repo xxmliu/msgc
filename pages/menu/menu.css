@@ -1,0 +1,78 @@
+#body {
+  background-color: #fae8c8;
+}
+#body > .menu {
+  margin: 0 auto;
+  width: var(--width-main);
+}
+#body > .menu > .menu-content {
+  display: flex;
+  flex-wrap: wrap;
+}
+#body > .menu > .menu-content > li {
+  cursor: pointer;
+  width: calc((100% - 20px) / 3);
+  border-radius: 6px;
+  background-color: white;
+  overflow: hidden;
+  margin: 0 10px 10px 0;
+  transition: 0.2s;
+}
+#body > .menu > .menu-content > li:nth-child(3n) {
+  margin-right: 0;
+}
+#body > .menu > .menu-content > li:hover {
+  box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.1);
+}
+#body > .menu > .menu-content > li:hover > div > img {
+  transform: scale(1.05);
+}
+#body > .menu > .menu-content > li > div {
+  overflow: hidden;
+  position: relative;
+}
+#body > .menu > .menu-content > li > div > div {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 4px;
+  font-size: 14px;
+}
+#body > .menu > .menu-content > li > div > img {
+  transition: 0.2s;
+  width: 100%;
+}
+#body > .menu > .menu-content > li > p {
+  padding: 10px;
+  padding-bottom: 20px;
+}
+#body > .menu > .pages {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+#body > .menu > .pages > button {
+  line-height: 40px;
+  width: 80px;
+  background-color: white;
+}
+#body > .menu > .pages > ul {
+  display: flex;
+  margin: 0 3px;
+}
+#body > .menu > .pages > ul > li {
+  cursor: default;
+  width: 40px;
+  text-align: center;
+  background-color: white;
+  margin: 0 3px;
+  line-height: 40px;
+}
+#body > .menu > .pages > ul > li.active {
+  background-color: orange;
+  color: white;
+}/*# sourceMappingURL=menu.css.map */

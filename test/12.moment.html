@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>moment.js</title>
+</head>
+
+<body>
+  <!-- 基于Date 封装而来的 更加易用的 日期处理库 -->
+  <script src="../node_modules/moment/moment.js"></script>
+  <script>
+    var now = new Date().getTime() //当前时间戳
+    console.log('当前时间:', now)
+
+    // 使用moment 转化时间格式
+    console.log(
+      // format: 进行格式转化
+      moment(now).format('YYYY/MM/DD HH:mm:ss')
+      // 官方提供了一些 特殊的字符, 代表特殊的含义, 详见官方文档
+      // http://momentjs.cn/docs/
+    );
+    // 扩展题: 把时间格式化成:  2023年 第2季度 星期2 本年度第xx周  的格式显示
+
+    console.log(
+      moment(now).format('YYYY年 第Q季度 星期E 本年度第W周')
+    );
+
+
+
+    // 使用Date方案转换时间戳为 年/月/日 时:分:秒 格式
+    var date = new Date(now)
+    var year = date.getFullYear()
+    var month = date.getMonth() + 1
+    month = month < 10 ? '0' + month : month
+
+    var day = date.getDate()
+    var hour = date.getHours()
+    var minute = date.getMinutes()
+    var second = date.getSeconds()
+
+    console.log(`${year}年${month}月${day}日 ${hour}:${minute}:${second}`);
+  </script>
+</body>
+
+</html>

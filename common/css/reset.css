@@ -1,0 +1,94 @@
+/* 
+为什么要样式重置?
+1个元素的样式, 由 4 种因素决定
+- 元素本身的样式
+- 浏览器提供的个性化样式
+- class
+- style
+
+重置是为了 抹平 浏览器提供的个性化样式, 让网页在不同浏览器上呈现相同的效果
+ */
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+}
+
+li {
+  list-style: none;
+}
+
+html {
+  font-size: 16px;
+  color: #333;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+ul,
+p,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+/* 重置按钮 */
+button {
+  border: none;
+  outline: none;
+}
+
+button:active {
+  opacity: 0.8;
+}
+
+input {
+  background-color: white;
+  border: none;
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* 修改 多媒体元素默认的适配方案 */
+img,
+video {
+  object-fit: cover;
+}
+
+/* 为精灵图准备的元素 */
+i {
+  /* 需要能设置宽高, 所以行内块 */
+  display: inline-block;
+}
+
+/* 重置滚动栏的样式 */
+/* :: 代表是伪元素选择器.  所有元素自带的滚动栏元素 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+/* 轨迹,轨道 */
+::-webkit-scrollbar-track {
+  background-color: #ddd9cf;
+}
+
+/* 滑块 */
+::-webkit-scrollbar-thumb {
+  background-color: #b3aa94;
+}

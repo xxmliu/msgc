@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>视频标签</title>
+
+  <style>
+    video {
+      border: 3px solid red;
+      /* 如果只设置宽 或 高, 则按照原有比例缩放 */
+      width: 300px;
+      /* 同时设置宽和高, 但是与原有比例不一致 */
+      height: 300px;
+
+      /* 适配方案: object-fit */
+      /* contain:默认值; 包含所有内容, 等比例展示; 导致有留白 */
+      /* cover: 等比例缩放, 充满; 导致多余部分被截取 */
+      /* fill: 不等比例, 拉伸充满; 导致变形 */
+      object-fit: fill;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- HTML5 中有三种多媒体元素: 图片 音频 视频 -->
+  <!-- 
+    video: 视频标签
+    - src: 设置资源的地址
+    - controls: 控制器组件 
+    - autoplay: 自动播放. 在某些浏览器上不允许自动播放, 例如 谷歌浏览器
+    - loop: 循环播放
+    - preload: 预加载. 在视频未播放前 预先下载.
+      -- none: 不预加载
+      -- auto: 自动加载
+      -- metadata: 元数据加载, 不加载视频内容本身, 只加载相关信息, 比如封面,时长,宽高等信息,默认把视频的第一帧作为默认的封面
+
+    poster: 海报/封面. 可以修改默认的视频封面. 视频默认会以封面大小做显示
+
+    同图片, 视频也具备两种宽高 : 显示宽高 和 实际宽高
+  -->
+  <!-- <video poster="../assets/img/logo.png" src="../assets/video/11.mp4" controls loop preload="metadata"></video> -->
+  <video src="../assets/video/11.mp4" controls loop preload="metadata"></video>
+</body>
+
+</html>

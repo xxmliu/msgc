@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>美食广场</title>
+  <!-- 全局引入 -->
+  <link rel="stylesheet" href="common/css/reset.css">
+  <link rel="stylesheet" href="common/css/base.css">
+  <link rel="stylesheet" href="node_modules/animate.css/animate.min.css">
+
+  <!-- 标签栏图标 -->
+  <link rel="shortcut icon" href="./assets/img/favicon.ico" type="image/x-icon">
+
+</head>
+
+<body>
+  <div id="header"></div>
+  <div id="body"></div>
+  <div id="footer"></div>
+
+  <script src="node_modules/jquery/dist/jquery.min.js"></script>
+  <script>
+    // header.html 中的代码, 最终是在 index.html 中执行的, 所以 header.html 中如果出现 相对路径, 应该是相对于运行时所在的 index.html
+    $('#header').load('./components/header/header.html')
+
+    $('#footer').load('./components/footer/footer.html')
+
+    // 读取路径的参数 p 的值
+    const params = new URLSearchParams(location.search)
+    // 通过 逻辑短路 语法, 给p 设置默认值
+    const p = params.get('p') || 'home'
+
+    // 拼接出 对应的页面路径
+    const path = `./pages/${p}/${p}.html`
+    console.log('当前页面:', path)
+    // 加载html结束之后, 立刻再加载相关联的 css 和 js 文件
+    $('#body').load(path, function () {
+      // 加载页面的css
+      $('head').append(`<link rel="stylesheet" href="./pages/${p}/${p}.css">`)
+      // 加载页面对应的js
+      // 不能像 css的方式, 因为会把 < /script> 误认为脚本的结束标签
+      // 解决: 用DOM的方案创建脚本标签
+      const s = document.createElement('script')
+      s.src = `./pages/${p}/${p}.js`
+      $('body').append(s)
+    })
+  </script>
+
+
+</body>
+
+</html>

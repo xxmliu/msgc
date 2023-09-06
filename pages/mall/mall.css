@@ -1,0 +1,45 @@
+#body {
+  background-color: #f7f7f7;
+}
+#body > .mall {
+  width: var(--width-main);
+  margin: 0 auto;
+}
+#body > .mall > .mall-content {
+  display: flex;
+  flex-wrap: wrap;
+}
+#body > .mall > .mall-content > li {
+  width: calc((100% - 30px) / 4);
+  margin: 0 10px 10px 0;
+  background-color: white;
+}
+#body > .mall > .mall-content > li:nth-child(4n) {
+  margin-right: 0;
+}
+#body > .mall > .mall-content > li > img {
+  width: 100%;
+}
+#body > .mall > .mall-content > li > p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-height: 1.2em;
+  height: 2.4em;
+  margin: 5px 0;
+}
+#body > .mall > .mall-content > li > div {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+}
+#body > .mall > .mall-content > li > div > b {
+  color: var(--color-primary);
+  font-size: 1.2rem;
+}
+#body > .mall > .mall-content > li > div > span {
+  font-size: 14px;
+  color: #777;
+}/*# sourceMappingURL=mall.css.map */

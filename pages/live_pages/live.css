@@ -1,0 +1,73 @@
+#body {
+  background-color: #f7f7f7;
+}
+#body > .live {
+  width: var(--width-main);
+  margin: 0 auto;
+}
+#body > .live > .live-content {
+  display: flex;
+  flex-wrap: wrap;
+}
+#body > .live > .live-content > li {
+  width: calc((100% - 20px) / 3);
+  margin: 0 10px 10px 0;
+}
+#body > .live > .live-content > li:nth-child(3n) {
+  margin-right: 0;
+}
+#body > .live > .live-content > li > div {
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+}
+#body > .live > .live-content > li > div > .hn {
+  position: absolute;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
+  color: white;
+  font-size: 13px;
+  top: 0;
+  right: 0;
+  width: 50%;
+  padding: 4px;
+  text-align: end;
+}
+#body > .live > .live-content > li > div > .nickname {
+  position: absolute;
+  background-image: linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
+  color: white;
+  font-size: 13px;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  padding: 4px;
+}
+#body > .live > .live-content > li > div > img {
+  width: 100%;
+}
+#body > .live > .pages {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+#body > .live > .pages > button {
+  background-color: white;
+  width: 80px;
+  height: 40px;
+}
+#body > .live > .pages > ul {
+  display: flex;
+  margin: 0 3px;
+}
+#body > .live > .pages > ul > li {
+  cursor: default;
+  width: 40px;
+  text-align: center;
+  line-height: 40px;
+  background-color: white;
+  margin: 0 3px;
+}
+#body > .live > .pages > ul > li.active {
+  color: white;
+  background-color: orange;
+}/*# sourceMappingURL=live.css.map */

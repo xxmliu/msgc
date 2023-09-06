@@ -1,0 +1,39 @@
+2023.03.30
+- 利用node.js管理整个项目包, 安装 jquery 模块
+- 在根目录下, 新建 index.html 作为首页
+- 创建文件夹 assets 用于存储公共的静态资源
+  - 多媒体资源: 图片 视频 音频
+- 创建 common 目录, 用于存放公共的 css 和 js
+  - js
+  - css
+- 创建文件夹 pages 用于存放每个页面的代码
+  - home: 首页
+  - live: 直播
+  - login: 登录
+  - mall : 商城
+  - menu: 视频菜谱
+  - note: 笔记
+  - register: 注册
+  - search: 搜索
+  - profile: 个人信息
+- 为每个页面增加3个文件
+  - js scss 和 html
+- 制作了两个全局样式文件  reset.css 和 base.css
+  - 在 index.html 中, 引入两个全局样式
+- 在首页index.html中, 分3个容器, 用于存放 头 脚 和 身体 的代码
+- 创建 components 目录, 用于存放组件
+  - 组件: 组成页面的零件
+- 新建两个组件: header 和 footer
+- 从百度网盘提供的 msgc.zip 压缩包中, 找到assets下的 img 和 video 文件夹, 复制到我们项目的 assets 中
+- 书写 header 相关代码, 通过 load 方式加载到 index.html 中
+  - 关注 相对路径的 问题
+- 书写 footer 相关代码
+- 为每个页面的 html 添加 h1标签, 内容为页面名
+- 路由系统实现 局部模块切换
+  - header.html 中的每个超链接, 添加不同的参数p
+  - index.htm 中, 读取路径中的参数p, 拼接出对应的页面名, 通过load加载
+  - 加载页面后, 要加载对应的 css 和 js 文件
+- 完成 视频菜谱 页面的制作
+- 完成 直播 页面的制作
+- 完成 商城 页面的制作
+- 完成 笔记 页面的制作

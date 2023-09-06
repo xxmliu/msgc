@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>数组的splice方法</title>
+</head>
+
+<body>
+  <script>
+    // 数组的splice方法
+    // 基本用法: 数组.splice(index, n, value)
+    // 从 index 序号位置, 删除n个元素, 然后把 value 存储到此序号位置
+    var names = ['tom', 'john', 'lily', 'lucy']
+    //             0      1       2       3
+    names.splice(1, 1, 'kitty')
+    console.log(names)
+
+    // indexOf : 获取某个元素的序号位置
+    console.log('lily的序号:', names.indexOf('lily'))
+  </script>
+</body>
+
+</html>

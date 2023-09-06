@@ -1,0 +1,58 @@
+body {
+  background-color: #fae8c8;
+}
+body > #footer {
+  display: none;
+}
+body > #body > .register > div {
+  width: 500px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 150px;
+  padding: 20px 0;
+}
+body > #body > .register > div > h2 {
+  margin-bottom: 20px;
+}
+body > #body > .register > div > div {
+  height: 75px;
+}
+body > #body > .register > div > div > p {
+  display: none;
+}
+body > #body > .register > div > div > p.err {
+  color: red;
+}
+body > #body > .register > div > div > p.ok {
+  color: green;
+}
+body > #body > .register > div > div > input {
+  width: 300px;
+  border: 2px solid #888;
+  padding: 10px 15px;
+  border-radius: 4px;
+  font-size: 18px;
+}
+body > #body > .register > div > div > input.err {
+  border-color: red;
+}
+body > #body > .register > div > div > input:focus {
+  border-color: blue;
+}
+body > #body > .register > div > label > a {
+  color: var(--color-primary);
+}
+body > #body > .register > div > button {
+  width: 200px;
+  height: 40px;
+  border-radius: 5px;
+  font-size: 18px;
+  color: white;
+  margin-top: 30px;
+  background-color: var(--color-primary);
+}/*# sourceMappingURL=register.css.map */

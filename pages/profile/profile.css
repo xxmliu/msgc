@@ -1,0 +1,93 @@
+#footer {
+  display: none !important;
+}
+
+body {
+  background-color: #f7f7f7;
+}
+
+#body {
+  padding-top: 20px;
+}
+#body > .profile {
+  width: var(--width-main);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+#body > .profile > .left {
+  align-self: flex-start;
+  width: 20%;
+  padding: 20px;
+  border-radius: 6px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+#body > .profile > .left > ul {
+  margin-top: 40px;
+}
+#body > .profile > .left > ul > li {
+  margin-bottom: 15px;
+  font-size: 1.1em;
+  cursor: default;
+}
+#body > .profile > .left > ul > li.active {
+  color: var(--color-primary);
+}
+#body > .profile > .right {
+  width: 79%;
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+}
+#body > .profile > .right > div > h2 {
+  padding: 10px;
+  background-color: #f7f7f7;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+#body > .profile > .right > div:nth-child(1) > table {
+  width: 100%;
+}
+#body > .profile > .right > div:nth-child(1) > table > tbody > tr > td {
+  padding: 5px;
+  border-bottom: 1px dashed #333;
+}
+#body > .profile > .right > div:nth-child(1) > table > tbody > tr > td:nth-child(1) {
+  width: 100px;
+}
+#body > .profile > .right > div#photo > img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.3);
+}
+#body > .profile > .right > div#photo > button {
+  margin: 10px 0;
+  background-color: var(--color-primary);
+  color: white;
+  font-size: 18px;
+  width: 120px;
+  height: 40px;
+  border-radius: 4px;
+}
+#body > .profile > .right > div#photo > div {
+  display: flex;
+  flex-wrap: wrap;
+  height: 400px;
+  overflow-y: scroll;
+}
+#body > .profile > .right > div#photo > div > img {
+  width: 80px;
+  height: 80px;
+  margin: 0 10px 10px 0;
+}
+#body > .profile > .right > div:last-child > button {
+  background-color: var(--color-primary);
+  color: white;
+  font-size: 18px;
+  width: 150px;
+  height: 40px;
+  border-radius: 4px;
+}/*# sourceMappingURL=profile.css.map */

@@ -1,0 +1,26 @@
+#footer {
+  background-color: #000;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#footer .footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#footer .footer > ul {
+  display: flex;
+}
+#footer .footer > ul > li {
+  margin: 7px;
+}
+#footer .footer > ul > li > a {
+  color: white;
+}
+#footer .footer > p {
+  color: white;
+  font-size: 12px;
+}/*# sourceMappingURL=footer.css.map */

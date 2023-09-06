@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>使用DOM操作video</title>
+</head>
+
+<body>
+  <video src="../assets/video/22.mp4" height="400"></video>
+
+  <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+  <script>
+    // 鼠标悬浮时开始播放
+    $('video').mouseover(function () {
+      console.dir(this)
+      // play: 播放
+      // this.play() // 原生的触发方法的方式
+      // jQuery的语法: 需要利用 trigger方法来触发 元素上的执行方法
+      $(this).trigger('play')
+    })
+      // 鼠标离开时停止播放
+      .mouseleave(function () {
+        this.pause() // 暂停
+      })
+  </script>
+</body>
+
+</html>

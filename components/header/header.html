@@ -1,0 +1,31 @@
+<!-- 引入: 关注相对路径 是 相对 index.html -->
+<link rel="stylesheet" href="./components/header/header.css">
+<script src="./components/header/header.js"></script>
+
+<!-- header.html -->
+<div class="header">
+  <!-- 由于当前文件的代码最终是在 index.html 中运行, 所以这里的图片路径要 相对 index.html 来写 -->
+  <img src="./assets/img/logo.png" alt="">
+
+  <div class="search">
+    <input type="text" placeholder="菜谱名,食材名">
+    <button>搜索</button>
+  </div>
+
+  <div class="nav">
+    <!-- 人为创造的巧合: p 的值 必须和 页面名一样 -->
+    <a href="?p=home">首页</a>
+    <a href="?p=menu">视频菜谱</a>
+    <a href="?p=note">笔记</a>
+    <a href="?p=mall">商城</a>
+    <a href="?p=live">直播</a>
+  </div>
+
+  <a href="?p=login">登录</a>
+
+  <div class="user">
+    <img src="./assets/img/user_unknown.png" alt="">
+    <!-- 个人信息页面 -->
+    <a href="?p=profile">用户名</a>
+  </div>
+</div>

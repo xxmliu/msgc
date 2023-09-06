@@ -1,0 +1,59 @@
+#footer {
+  display: none !important;
+}
+
+#body > .login {
+  min-height: 800px;
+  padding-bottom: 100px;
+  background-image: url(../../assets/img/login/bg.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#body > .login > h1 {
+  color: white;
+  padding: 80px 0;
+}
+#body > .login > div {
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 30px 100px;
+  align-items: center;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.1);
+}
+#body > .login > div > h2 {
+  margin-bottom: 30px;
+}
+#body > .login > div > input {
+  border: 1px solid #333;
+  font-size: 18px;
+  padding: 10px 15px;
+  border-radius: 100px;
+  width: 300px;
+  margin-bottom: 10px;
+}
+#body > .login > div > div {
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+  margin: 10px 0;
+}
+#body > .login > div > div a {
+  color: #333;
+}
+#body > .login > div > div a:hover {
+  color: var(--color-primary);
+}
+#body > .login > div > button {
+  width: 140px;
+  height: 40px;
+  color: white;
+  background-color: var(--color-primary);
+  font-size: 18px;
+  border-radius: 5px;
+  margin-top: 20px;
+}/*# sourceMappingURL=login.css.map */

@@ -1,0 +1,96 @@
+#body {
+  background-color: #fae8c8;
+
+  > .menu {
+    margin: 0 auto;
+    width: var(--width-main);
+
+    > .menu-content {
+      display: flex;
+      flex-wrap: wrap;
+
+      > li {
+        cursor: pointer;
+        // css3: 提供 calc() 函数, 可以实现简单的数学运算
+        // 格式有严格要求: 运算符的前后必须带有空格
+        width: calc((100% - 2 * 10px) / 3);
+        border-radius: 6px;
+        background-color: white;
+        overflow: hidden;
+        margin: 0 10px 10px 0;
+
+        // 1排3个, 靠右侧的元素的右边距应该为0
+        // 序号规律: 3 6 9 12 ... 3n
+        &:nth-child(3n) {
+          margin-right: 0;
+        }
+
+        transition: 0.2s;
+
+        &:hover {
+          box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.1);
+
+          > div > img {
+            transform: scale(1.05);
+          }
+        }
+
+        > div {
+          overflow: hidden;
+          position: relative;
+
+          > div {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 4px;
+            font-size: 14px;
+          }
+
+          > img {
+            transition: 0.2s;
+            width: 100%;
+          }
+        }
+
+        > p {
+          padding: 10px;
+          padding-bottom: 20px;
+        }
+      }
+    }
+    > .pages {
+      display: flex;
+      justify-content: center;
+      padding: 20px 0;
+
+      > button {
+        line-height: 40px;
+        width: 80px;
+        background-color: white;
+      }
+      > ul {
+        display: flex;
+        margin: 0 3px;
+
+        > li {
+          cursor: default;
+          width: 40px;
+          text-align: center;
+          background-color: white;
+          margin: 0 3px;
+          line-height: 40px;
+
+          &.active {
+            background-color: orange;
+            color: white;
+          }
+        }
+      }
+    }
+  }
+}

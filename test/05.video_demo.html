@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>视频展示 11:34</title>
+
+  <style>
+    .videos {
+      display: flex;
+      width: 1000px;
+      border: 3px solid green;
+      justify-content: space-between;
+    }
+
+    .videos>video {
+      width: calc((100% - 3 * 10px) / 4);
+      height: 400px;
+      object-fit: cover;
+      transition: 0.3s;
+    }
+
+    /* 激活: 宽度大 */
+    .videos>video.active {
+      /* 运算符左右必须有空格间隔.  把3个非激活的宽度 - 20px */
+      width: calc((100% - 3 * 10px) / 4 + 3 * 20px);
+    }
+
+    /* 非激活: 宽度小 */
+    .videos>video.noactive {
+      width: calc((100% - 3 * 10px) / 4 - 20px);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="videos">
+    <video src="../assets/video/11.mp4"></video>
+    <video src="../assets/video/22.mp4"></video>
+    <video src="../assets/video/33.mp4"></video>
+    <video src="../assets/video/44.mp4"></video>
+  </div>
+
+  <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+  <script>
+    $('.videos>video').click(function () {
+      // 当前项有3种情况
+      // 1. 不带有 active 和 noactive 样式
+      // 2. 带有active
+      // 3. 带有noactive
+      if ($(this).hasClass('active')) {
+        // 当前项激活时被点击: 删除其激活样式, 和 兄弟们的 非激活样式
+        $(this).removeClass('active').siblings().removeClass('noactive')
+      } else if ($(this).hasClass('noactive')) {
+        // 当前项要激活 并 去掉自己的非激活样式
+        $(this).addClass('active').removeClass('noactive')
+        // 去掉之前兄弟项中,激活的那个元素的 激活状态, 并增加 noactive 样式
+        $(this).siblings().removeClass('active').addClass('noactive')
+      } else {
+        $(this).addClass('active').siblings().addClass('noactive')
+      }
+    })
+  </script>
+</body>
+
+</html>

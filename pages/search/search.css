@@ -1,0 +1,73 @@
+#body {
+  background-color: #f7f7f7;
+}
+#body > .search {
+  margin: 0 auto;
+  width: var(--width-main);
+}
+#body > .search > .sort {
+  display: flex;
+  padding: 10px 0;
+}
+#body > .search > .sort > li {
+  margin-right: 10px;
+  cursor: pointer;
+}
+#body > .search > .sort > li.active {
+  color: orange;
+}
+#body > .search > .search-content > li {
+  margin-bottom: 10px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  overflow: hidden;
+  display: flex;
+}
+#body > .search > .search-content > li > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+}
+#body > .search > .search-content > li > div > b {
+  color: red;
+  font-size: 1.2em;
+}
+#body > .search > .search-content > li > img {
+  width: 150px;
+  height: 150px;
+}
+#body > .search > .pages {
+  display: flex;
+  padding: 20px 0;
+  justify-content: center;
+}
+#body > .search > .pages > button {
+  background-color: white;
+  width: 80px;
+  line-height: 40px;
+  border: 1px solid #333;
+  border-radius: 4px;
+}
+#body > .search > .pages > button:disabled {
+  border-color: #aaa;
+  color: #aaa;
+}
+#body > .search > .pages > ul {
+  display: flex;
+  margin: 0 3px;
+}
+#body > .search > .pages > ul > li {
+  margin: 0 3px;
+  width: 40px;
+  text-align: center;
+  line-height: 40px;
+  border: 1px solid #333;
+  border-radius: 4px;
+  cursor: default;
+}
+#body > .search > .pages > ul > li.active {
+  color: white;
+  background-color: orange;
+  border-color: orange;
+}/*# sourceMappingURL=search.css.map */

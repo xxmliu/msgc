@@ -1,0 +1,55 @@
+#body {
+  background-color: #f7f7f7;
+
+  > .mall {
+    width: var(--width-main);
+    margin: 0 auto;
+
+    > .mall-content {
+      display: flex;
+      flex-wrap: wrap;
+
+      > li {
+        width: calc((100% - 3 * 10px) / 4);
+        margin: 0 10px 10px 0;
+        background-color: white;
+
+        &:nth-child(4n) {
+          margin-right: 0;
+        }
+
+        > img {
+          width: 100%;
+        }
+
+        > p {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+          // 高度 = 两行文本的高
+          line-height: 1.2em;
+          height: 2.4em;
+
+          margin: 5px 0;
+        }
+
+        > div {
+          display: flex;
+          justify-content: space-between;
+          padding: 5px;
+
+          > b {
+            color: var(--color-primary);
+            font-size: 1.2rem;
+          }
+          > span {
+            font-size: 14px;
+            color: #777;
+          }
+        }
+      }
+    }
+  }
+}

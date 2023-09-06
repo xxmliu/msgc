@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="box"></div>
+
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+
+    <script>
+      for (let i = 1; i < 120; i++) {
+        $('#box').append(`<p>${i}</p>`)
+      }
+
+      $(window).scroll(function () {
+        console.log("窗口滚动...")
+
+        const top = $(window).scrollTop()
+        console.log("距顶距离:",top)
+
+        const dom_h = $(document).height()
+        const win_h = $(window).height()
+
+        const offset_bottom = dom_h - win_h
+        console.log("触底距离:",offset_bottom)
+
+        if(offset_bottom > Math.round(top) - 1) {
+          alert("检测到触底")
+        }
+
+      })
+
+    </script>
+  </body>
+</html>

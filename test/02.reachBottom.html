@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>触底操作 11:29</title>
+</head>
+
+<body>
+  <div id="box"></div>
+
+  <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+  <script>
+    for (let i = 1; i < 120; i++) {
+      $('#box').append(`<p>${i}</p>`)
+    }
+
+    // 监听页面滚动到底部的时机
+    $(window).scroll(function () {
+      console.log('窗口在滚动...')
+      // 滚动的距离: 向下滚动的距离. 距离顶部
+      const top = $(window).scrollTop() //不带参数是读取操作
+      console.log('距离顶部:', top)
+
+      // 触底距离 = 内容高 - 窗口高
+      // 内容高:
+      const dom_h = $(document).height()
+      // 窗口高
+      const win_h = $(window).height()
+
+      const offset_bottom = dom_h - win_h
+      console.log('触底距离:', offset_bottom);
+      // round: 四舍五入
+      if (offset_bottom == Math.round(top)) {
+        alert("检测到触底!")
+      }
+    })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>正则替换 10:06</title>
+</head>
+
+<body>
+  <!-- 正则表达式: Regular Expression   简称: RegExp -->
+  <!-- 非JS专属, 而是一种字符串格式模糊匹配的通用方案 -->
+  <script>
+    var words = `abcd ABCD abcd ABCD`
+
+    // 把 ab 替换为 xy
+    // 参数1: 你要查找的元素. 值有两种类型: 字符串或正则
+    //  -- 字符串: 只会找到第一个符合的元素, 不灵活; 无法满足实际开发需要
+    //  -- 正则: 具有更加灵活的配置方案
+    // 参数2: 你要替换成什么
+    var res = words.replace('ab', 'xy')
+    console.log('res:', res)
+
+    // 正则表达式, 需要用 // 作为外层包围
+    // 修饰符: g  代表全局匹配, 匹配所有符合的元素
+    var res = words.replace(/ab/g, 'xy')
+    console.log('res:', res)
+
+    // 修饰符: i  是ignore 代表忽略大小写
+    var res = words.replace(/ab/gi, 'xy')
+    console.log('res:', res)
+
+    // 项目中: 需要替换的值 是用户录入的, 属于变化的值
+    var kw = 'ab'
+    // 如何把字符串, 转为正则表达式?
+    // 使用 RegExp 构造函数, 来生成正则表达式
+    // 参数1: 正则的字符串格式
+    // 参数2: 正则的修饰符
+    var reg = new RegExp(kw, 'gi')
+    console.log(reg)
+
+
+    var phone = '18744558844'
+    // \d: 代表1个数字.   {n}: 代表n个
+    var reg = /(\d{3})(\d{4})(\d{4})/
+    //           1       2      3号捕获组
+    // () : 称为捕获组, 从正则匹配到的字符中抓取内容
+
+    // 猜一猜:  $1 $2 $3 $n  是什么意思?
+    // $n: 第n个捕获组捕捉的内容
+    var res = phone.replace(reg, '$1-$2-$3')
+    console.log(res)
+  </script>
+</body>
+
+</html>
